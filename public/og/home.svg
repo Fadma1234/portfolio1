@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Neutral portfolio website preview</title>
+  <desc id="desc">A clean portfolio preview with soft beige panels and dark text.</desc>
+  <rect width="1200" height="630" fill="#f5f0e8" />
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#fbf8f2" stroke="#d8cebf" />
+  <rect x="124" y="124" width="180" height="20" rx="10" fill="#2c2722" />
+  <rect x="124" y="176" width="520" height="40" rx="12" fill="#4a433c" />
+  <rect x="124" y="236" width="440" height="18" rx="9" fill="#a79a89" />
+  <rect x="124" y="268" width="400" height="18" rx="9" fill="#b9ac9c" />
+  <rect x="124" y="330" width="180" height="56" rx="18" fill="#2f2923" />
+  <rect x="328" y="330" width="180" height="56" rx="18" fill="#e9dfd1" stroke="#cabcaa" />
+  <rect x="742" y="164" width="270" height="120" rx="24" fill="#efe7dc" />
+  <rect x="742" y="308" width="270" height="120" rx="24" fill="#f3ecdf" />
+  <rect x="742" y="452" width="270" height="54" rx="20" fill="#e4d8c8" />
+</svg>
