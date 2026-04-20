@@ -1,6 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-
-import { SectionHeading } from "./SectionHeading";
 
 interface ProjectLink {
   href: string;
@@ -8,6 +7,8 @@ interface ProjectLink {
 }
 
 interface Project {
+  imageAlt: string;
+  imageSrc: string;
   name: string;
   summary: string;
   tags: readonly string[];
@@ -16,6 +17,8 @@ interface Project {
 
 const PROJECTS: readonly Project[] = [
   {
+    imageAlt: "NanoChat project interface screenshot",
+    imageSrc: "/projects/nanochat.png",
     name: "NanoChat App",
     summary: "AI chat interface project",
     tags: ["AI", "Chat UI", "Hugging Face"],
@@ -31,10 +34,17 @@ const PROJECTS: readonly Project[] = [
     ],
   },
   {
+    imageAlt: "Evaluation Project interface screenshot",
+    imageSrc:
+      "/projects/c__Users_fadma_AppData_Roaming_Cursor_User_workspaceStorage_b243466344a166cc279131191475aff2_images_Screenshot_2026-04-20_at_12-42-38_eval1___LLM_Evaluation_Pipeline-45cd0510-d293-4bdc-a118-913f900598e7.png",
     name: "Evaluation Project",
     summary: "ML evaluation experiments",
     tags: ["Machine Learning", "Evaluation", "Experiments"],
     links: [
+      {
+        href: "https://web-five-kappa-30.vercel.app/",
+        label: "Live Demo",
+      },
       {
         href: "https://github.com/Fadma1234/eval1",
         label: "GitHub",
@@ -42,42 +52,8 @@ const PROJECTS: readonly Project[] = [
     ],
   },
   {
-    name: "Portfolio Website",
-    summary:
-      "Personal portfolio website built to present projects, experience, and contact details with a clean responsive layout.",
-    tags: ["Next.js", "Responsive Design", "Portfolio"],
-    links: [
-      {
-        href: "https://web-five-kappa-30.vercel.app/",
-        label: "Live Demo",
-      },
-    ],
-  },
-  {
-    name: "Theme UI Project",
-    summary:
-      "Theme-focused frontend project exploring reusable styling patterns and polished interface presentation.",
-    tags: ["Theme UI", "Frontend", "Design System"],
-    links: [
-      {
-        href: "https://github.com/Fadma1234/theme1",
-        label: "GitHub",
-      },
-    ],
-  },
-  {
-    name: "Shopify Theme Work",
-    summary:
-      "Shopify theme customization work focused on storefront presentation and content editing.",
-    tags: ["Shopify", "Theme Customization", "E-commerce"],
-    links: [
-      {
-        href: "https://admin.shopify.com/store/fadma-slhmukyw/themes/153002934458/editor",
-        label: "Theme Editor",
-      },
-    ],
-  },
-  {
+    imageAlt: "Patient Tracker project screenshot",
+    imageSrc: "/projects/patient-tracker.png",
     name: "Patient Tracker App",
     summary: "Full-stack app for tracking patient recovery progress",
     tags: ["Full Stack", "Healthcare", "Tracking"],
@@ -88,6 +64,19 @@ const PROJECTS: readonly Project[] = [
       },
       {
         href: "https://github.com/Fadma1234/patient-tracker",
+        label: "GitHub",
+      },
+    ],
+  },
+  {
+    imageAlt: "Shopify theme storefront screenshot",
+    imageSrc: "/projects/shopify-theme-work.png",
+    name: "Shopify Theme Work",
+    summary: "Shopify storefront theme work presented as a polished ecommerce interface.",
+    tags: ["Shopify", "Theme Work", "Storefront"],
+    links: [
+      {
+        href: "https://github.com/Fadma1234/theme1",
         label: "GitHub",
       },
     ],
@@ -117,14 +106,22 @@ export function ProjectsSection(): JSX.Element {
   return (
     <section className="content-section" id="projects">
       <div className="container">
-        <SectionHeading
-          description="A selection of applied AI, full-stack, and frontend work presented in a clean responsive grid."
-          eyebrow="Projects"
-          title="Projects built around practical problem-solving."
-        />
+        <p className="eyebrow section-title-label">Projects</p>
         <div className="project-grid">
           {PROJECTS.map((project) => (
-            <article className="project-card" key={project.name}>
+            <article
+              className={`project-card ${project.name === "Shopify Theme Work" ? "project-card-centered" : ""}`}
+              key={project.name}
+            >
+              <div className="project-media">
+                <Image
+                  alt={project.imageAlt}
+                  className="project-image"
+                  height={576}
+                  src={project.imageSrc}
+                  width={1024}
+                />
+              </div>
               <div className="project-header">
                 <h3 className="project-title">{project.name}</h3>
               </div>
@@ -136,20 +133,22 @@ export function ProjectsSection(): JSX.Element {
                   </li>
                 ))}
               </ul>
-              <div className="project-links">
-                {project.links.map((link) => (
-                  <Link
-                    className="project-link"
-                    href={link.href}
-                    key={link.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <span>{link.label}</span>
-                    <ExternalLinkIcon />
-                  </Link>
-                ))}
-              </div>
+              {project.links.length > 0 ? (
+                <div className="project-links">
+                  {project.links.map((link) => (
+                    <Link
+                      className="project-link"
+                      href={link.href}
+                      key={link.href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <span>{link.label}</span>
+                      <ExternalLinkIcon />
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </article>
           ))}
         </div>

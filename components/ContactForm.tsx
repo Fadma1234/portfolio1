@@ -8,7 +8,6 @@ import {
   type ContactFormErrors,
   validateContactForm,
 } from "../lib/contactFormSchema";
-import { SectionHeading } from "./SectionHeading";
 
 interface ContactFormProps {
   endpoint?: string;
@@ -129,12 +128,8 @@ export function ContactForm({
 
   return (
     <section className="content-section" id="contact">
-      <div className="container section-grid">
-        <SectionHeading
-          description={`Send a note directly to ${CONTACT_EMAIL} using a clean, backend-free contact flow.`}
-          eyebrow="Contact"
-          title="Reach out through a minimal contact form."
-        />
+      <div className="container">
+        <p className="eyebrow section-title-label">Contact Me</p>
         <form
           aria-busy={isSubmitting}
           className="contact-card"
@@ -181,7 +176,6 @@ export function ContactForm({
               id="message"
               name="message"
               onChange={(event) => handleChange("message", event.target.value)}
-              placeholder="Tell me a bit about your project or idea."
               rows={6}
               value={values.message}
             />

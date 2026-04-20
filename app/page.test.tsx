@@ -17,26 +17,41 @@ describe("Home", () => {
       }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", {
-        name: /empathy, recovery thinking, and technical depth\./i,
-        level: 2,
-      }),
+      screen.getByText(/i spent years helping people recover from injury/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", {
-        name: /projects built around practical problem-solving\./i,
-        level: 2,
-      }),
+      screen.getByAltText(/fadma belkhouraf smiling outdoors/i),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", {
+        name: /empathy, recovery thinking, and technical depth\./i,
+      }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", {
+        name: /projects built around practical problem-solving\./i,
+      }),
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: /nanochat app/i, level: 3 }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /shopify theme work/i, level: 3 }),
+    ).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /live demo/i }).length).toBe(3);
     expect(
-      screen.getByRole("heading", {
-        name: /reach out through a minimal contact form\./i,
-        level: 2,
-      }),
+      screen.getByAltText(/nanochat project interface screenshot/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(/evaluation project interface screenshot/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(/patient tracker project screenshot/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", {
+        name: /reach out through a minimal contact form\./i,
+      }),
+    ).not.toBeInTheDocument();
   });
 });

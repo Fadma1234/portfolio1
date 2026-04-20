@@ -271,6 +271,15 @@ main {
   text-transform: uppercase;
 }
 
+.section-title-label {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-sm);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -317,6 +326,29 @@ main {
   border-radius: var(--radius);
 }
 
+.about-content {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+}
+
+.about-image-wrap {
+  width: min(100%, 18rem);
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  background: rgba(252, 248, 242, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
 .about-layout {
   display: grid;
   gap: var(--space-md);
@@ -328,6 +360,8 @@ main {
 }
 
 .about-card {
+  width: min(100%, 52rem);
+  margin: 0 auto;
   padding: clamp(1.35rem, 3vw, 2rem);
   background: linear-gradient(180deg, rgba(252, 248, 242, 0.95), rgba(244, 237, 228, 0.88));
 }
@@ -428,7 +462,6 @@ main {
 .project-grid {
   display: grid;
   gap: var(--space-md);
-  margin-top: var(--space-lg);
 }
 
 .project-card {
@@ -442,11 +475,36 @@ main {
     border-color 160ms ease,
     box-shadow 160ms ease;
   animation: section-fade-up 680ms ease both;
+  overflow: hidden;
 }
 
 .project-card:hover {
   border-color: rgba(113, 97, 82, 0.32);
   box-shadow: 0 24px 50px rgba(31, 26, 23, 0.11);
+}
+
+.project-media {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 8px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-card-centered {
+  justify-self: center;
 }
 
 .project-header {
@@ -758,6 +816,15 @@ main {
     gap: 1rem;
   }
 
+  .about-content {
+    gap: 0.85rem;
+  }
+
+  .about-image-wrap {
+    width: min(100%, 15rem);
+    padding: 0.3rem;
+  }
+
   .section-heading {
     gap: 0.8rem;
   }
@@ -824,6 +891,10 @@ main {
 @media (min-width: 768px) {
   .hero-section {
     padding-top: var(--space-lg);
+  }
+
+  .project-card-centered {
+    grid-column: 2;
   }
 
   .section-grid {
