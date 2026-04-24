@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+
 interface SectionHeadingProps {
   eyebrow: string;
   title: string;
@@ -8,7 +10,7 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
-}: SectionHeadingProps): JSX.Element {
+}: SectionHeadingProps): ReactElement {
   return (
     <div className="section-heading">
       <p className="eyebrow">{eyebrow}</p>

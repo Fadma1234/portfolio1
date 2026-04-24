@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -10,7 +11,7 @@ const NAV_ITEMS = [
   { href: "#contact", id: "contact", label: "Contact" },
 ] as const;
 
-export function Navbar(): JSX.Element {
+export function Navbar(): ReactElement {
   const [activeSectionId, setActiveSectionId] = useState<string>("");
 
   useEffect(() => {

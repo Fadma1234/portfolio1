@@ -19,6 +19,7 @@ export const contactFormSchema = z
   .strict();
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+export type ContactFormInput = z.input<typeof contactFormSchema>;
 
 export interface ContactFormErrors {
   email?: string;
@@ -32,7 +33,7 @@ export interface ContactFormValidationResult {
 }
 
 export function validateContactForm(
-  input: Record<string, string>,
+  input: ContactFormInput,
 ): ContactFormValidationResult {
   const parsedResult = contactFormSchema.safeParse(input);
 

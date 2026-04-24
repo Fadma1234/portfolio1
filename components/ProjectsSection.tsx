@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactElement } from "react";
 
 interface ProjectLink {
   href: string;
@@ -18,7 +19,7 @@ interface Project {
 const PROJECTS: readonly Project[] = [
   {
     imageAlt: "NanoChat project interface screenshot",
-    imageSrc: "/projects/nanochat.png",
+    imageSrc: "/images/nanochat-project.png",
     name: "NanoChat App",
     summary: "AI chat interface project",
     tags: ["AI", "Chat UI", "Hugging Face"],
@@ -35,8 +36,7 @@ const PROJECTS: readonly Project[] = [
   },
   {
     imageAlt: "Evaluation Project interface screenshot",
-    imageSrc:
-      "/projects/c__Users_fadma_AppData_Roaming_Cursor_User_workspaceStorage_b243466344a166cc279131191475aff2_images_Screenshot_2026-04-20_at_12-42-38_eval1___LLM_Evaluation_Pipeline-45cd0510-d293-4bdc-a118-913f900598e7.png",
+    imageSrc: "/images/evaluation-project.png",
     name: "Evaluation Project",
     summary: "ML evaluation experiments",
     tags: ["Machine Learning", "Evaluation", "Experiments"],
@@ -53,7 +53,7 @@ const PROJECTS: readonly Project[] = [
   },
   {
     imageAlt: "Patient Tracker project screenshot",
-    imageSrc: "/projects/patient-tracker.png",
+    imageSrc: "/images/patient-tracker-project.png",
     name: "Patient Tracker App",
     summary: "Full-stack app for tracking patient recovery progress",
     tags: ["Full Stack", "Healthcare", "Tracking"],
@@ -70,7 +70,7 @@ const PROJECTS: readonly Project[] = [
   },
   {
     imageAlt: "Shopify theme storefront screenshot",
-    imageSrc: "/projects/shopify-theme-work.png",
+    imageSrc: "/images/shopify-theme-work.png",
     name: "Shopify Theme Work",
     summary: "Shopify storefront theme work presented as a polished ecommerce interface.",
     tags: ["Shopify", "Theme Work", "Storefront"],
@@ -83,7 +83,7 @@ const PROJECTS: readonly Project[] = [
   },
 ] as const;
 
-function ExternalLinkIcon(): JSX.Element {
+function ExternalLinkIcon(): ReactElement {
   return (
     <svg
       aria-hidden="true"
@@ -102,7 +102,7 @@ function ExternalLinkIcon(): JSX.Element {
   );
 }
 
-export function ProjectsSection(): JSX.Element {
+export function ProjectsSection(): ReactElement {
   return (
     <section className="content-section" id="projects">
       <div className="container">

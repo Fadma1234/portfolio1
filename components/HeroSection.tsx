@@ -1,6 +1,7 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 
-export function HeroSection(): JSX.Element {
+export function HeroSection(): ReactElement {
   return (
     <section className="hero-section" id="home">
       <div className="container">

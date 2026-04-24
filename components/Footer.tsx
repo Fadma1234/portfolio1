@@ -1,6 +1,7 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 
-export function Footer(): JSX.Element {
+export function Footer(): ReactElement {
   return (
     <footer className="site-footer">
       <div className="container footer-shell">

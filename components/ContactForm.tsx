@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import type { FormEvent, ReactElement } from "react";
+import { useState } from "react";
 
 import {
   CONTACT_EMAIL,
@@ -29,7 +30,7 @@ type SubmissionState =
 export function ContactForm({
   endpoint = FORMSPREE_ENDPOINT,
   fetcher = fetch,
-}: ContactFormProps): JSX.Element {
+}: ContactFormProps): ReactElement {
   const [fieldErrors, setFieldErrors] = useState<ContactFormErrors>({});
   const [submissionState, setSubmissionState] = useState<SubmissionState>({
     status: "idle",

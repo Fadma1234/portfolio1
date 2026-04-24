@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactElement } from "react";
 
 import { AboutSection } from "../components/AboutSection";
 import { ContactForm } from "../components/ContactForm";
@@ -8,17 +9,19 @@ import { Navbar } from "../components/Navbar";
 import { ProjectsSection } from "../components/ProjectsSection";
 
 export const metadata = {
-  title: "Modern Portfolio Website",
+  title: {
+    absolute: "Fadma's Portfolio",
+  },
   description:
-    "Modern personal portfolio website with a minimal neutral palette, selected work, concise about section, and a clear email contact path.",
+    "Fadma's portfolio showcases selected work, a concise bio, and a clear contact path for potential collaborators and employers.",
   alternates: {
-    canonical: "https://portfolio.example.com/",
+    canonical: "https://portfolio1-delta-gules-52.vercel.app/",
   },
   openGraph: {
-    title: "Modern Portfolio Website",
+    title: "Fadma's Portfolio",
     description:
-      "Modern personal portfolio website with a minimal neutral palette, selected work, concise about section, and a clear email contact path.",
-    url: "https://portfolio.example.com/",
+      "Fadma's portfolio showcases selected work, a concise bio, and a clear contact path for potential collaborators and employers.",
+    url: "https://portfolio1-delta-gules-52.vercel.app/",
     images: [
       {
         url: "/og/home.svg",
@@ -30,7 +33,7 @@ export const metadata = {
   },
 } satisfies Metadata;
 
-export default function Home(): JSX.Element {
+export default function Home(): ReactElement {
   return (
     <main>
       <Navbar />
