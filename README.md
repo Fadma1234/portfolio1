@@ -4,7 +4,7 @@ Personal portfolio built with Next.js, TypeScript, and React.
 
 ## Live Link
 
-[https://portfolio1-delta-gules-52.vercel.app](https://portfolio1-delta-gules-52.vercel.app)
+[https://fadmabelk-delta-gules-52.vercel.app/](https://fadmabelk-delta-gules-52.vercel.app/)
 
 ## Stack
 
